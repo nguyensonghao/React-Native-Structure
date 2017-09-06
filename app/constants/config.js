@@ -1,0 +1,1 @@
+export const APP_NAME = "Sổ tay thú cưng";
