@@ -1,24 +1,59 @@
 
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
+import { Actions } from 'react-native-router-flux';
 
-import HomeStyle from './style';
+import Style from './style';
 
 export default class Home extends Component {
     render() {
         return (
-            <View style={HomeStyle.container}>
-                <View style={HomeStyle.boxItem}>
-                    <Text>Bài đăng</Text>
+            <View style={Style.container}>
+                <View style={Style.rows}>
+                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
+                        <Image
+                            style={Style.imgIcon}
+                            source={require('../../resources/images/dog.png')}
+                        />
+                        <Text style={Style.textIcon}>Bài Đăng</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
+                        <Image
+                            style={Style.imgIcon}
+                            source={require('../../resources/images/dog.png')}
+                        />
+                        <Text style={Style.textIcon}>Bài Đăng</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
+                        <Image
+                            style={Style.imgIcon}
+                            source={require('../../resources/images/dog.png')}
+                        />
+                        <Text style={Style.textIcon}>Bài Đăn</Text>
+                    </TouchableOpacity>
                 </View>
-                <View style={HomeStyle.boxItem}>
-                    <Text>Bài đăng</Text>
-                </View>
-                <View style={HomeStyle.boxItem}>
-                    <Text>Bài đăng</Text>
-                </View>
-                <View style={HomeStyle.boxItem}>
-                    <Text>Bài đăng</Text>
+                <View style={Style.rows}>
+                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
+                        <Image
+                            style={Style.imgIcon}
+                            source={require('../../resources/images/dog.png')}
+                        />
+                        <Text style={Style.textIcon}>Bài Đăng</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
+                        <Image
+                            style={Style.imgIcon}
+                            source={require('../../resources/images/dog.png')}
+                        />
+                        <Text style={Style.textIcon}>Bài Đăng</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
+                        <Image
+                            style={Style.imgIcon}
+                            source={require('../../resources/images/dog.png')}
+                        />
+                        <Text style={Style.textIcon}>Bài Đăng</Text>
+                    </TouchableOpacity>
                 </View>
             </View>
         );

@@ -1,7 +1,8 @@
 export default GlobalStyle = {
     container: {
         backgroundColor: 'white',
-        padding: 10
+        padding: 10,
+        flex: 1
     },
 
     navbar: {
