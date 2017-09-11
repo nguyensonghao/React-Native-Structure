@@ -3,15 +3,40 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  DrawerLayoutAndroid
 } from 'react-native';
 import { Scene, Router } from 'react-native-router-flux';
 
-import RouterConfig from './app/router';
+import RouterApp from './app/router';
+import Menu from './app/components/menu';
 
 export default class SoTayThuCung extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      menuLeft: null
+    }
+  }
+  
+  componentDidMount() {
+    this.setState({
+      menuLeft: this.refs.menuLeft
+    })  
+  }
+
   render() {
-    return <Router scenes={RouterConfig}/>
+    const { menuLeft } = this.state;
+
+    return (
+      <DrawerLayoutAndroid
+        ref="menuLeft"
+        drawerWidth={273}
+        drawerPosition={DrawerLayoutAndroid.positions.Left}
+        renderNavigationView={() => <Menu/>}>
+        <RouterApp menuLeft={menuLeft}/>
+      </DrawerLayoutAndroid>
+    )
   }
 }
 

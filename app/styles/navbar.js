@@ -7,6 +7,6 @@ export default NavbarStyle = {
         color: 'black',
         fontWeight: '400',
         fontSize: 18,
-        fontFamily: 'VNI-Annabelle'
+        fontFamily: 'VNIAnnabelle',
     }
 }

@@ -3,13 +3,14 @@ import { View, Text, FlatList } from 'react-native';
 
 import GlobalStyle from '../../../styles/global';
 import Item from '../components/item';
-
+import Loading from '../../../components/loading';
 
 class ListArticle extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            listArticle: []
+            listArticle: [],
+            showLoading: true
         }
     }
     
@@ -28,9 +29,17 @@ class ListArticle extends Component {
                 }
             ]
         })
+        
+        setTimeout(() => {
+            this.setState({
+                showLoading: false
+            })
+        }, 1000)
     }
 
     render() {
+        const { showLoading } = this.state;
+
         return (
             <View style={GlobalStyle.container}>
                 <FlatList

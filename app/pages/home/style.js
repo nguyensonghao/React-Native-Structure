@@ -7,7 +7,7 @@ export default Style = {
 
     rows: {
         flexDirection: 'row',
-        marginBottom: 20
+        marginBottom: 28
     },
 
     boxItem: {
@@ -16,8 +16,8 @@ export default Style = {
     },
 
     imgIcon: {
-        width: 80,
-        height: 80
+        width: 84,
+        height: 84
     },
 
     textIcon: {
