@@ -1,13 +1,12 @@
 export default Style = {
     container: {
-        backgroundColor: 'white',
-        padding: 20,
+        backgroundColor: '#f5f5f5',
         flex: 1
     },
 
     rows: {
         flexDirection: 'row',
-        marginBottom: 28
+        marginBottom: 12
     },
 
     boxItem: {
@@ -16,13 +15,13 @@ export default Style = {
     },
 
     imgIcon: {
-        width: 84,
-        height: 84
+        width: 70,
+        height: 70
     },
 
     textIcon: {
         marginTop: 6,
-        fontSize: 16,
-        color: 'black'
+        color: 'black',
+        fontSize: 14
     }
 }

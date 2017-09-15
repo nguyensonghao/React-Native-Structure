@@ -4,6 +4,7 @@ import { View, Text, FlatList } from 'react-native';
 import GlobalStyle from '../../../styles/global';
 import Item from '../components/item';
 import Loading from '../../../components/loading';
+import Actions from '../components/actions';
 
 class ListArticle extends Component {
     constructor(props) {
@@ -14,7 +15,7 @@ class ListArticle extends Component {
         }
     }
     
-    componentDidMount() {
+    componentWillMount() {
         this.setState({
             listArticle: [
                 {
@@ -36,7 +37,7 @@ class ListArticle extends Component {
             })
         }, 1000)
     }
-
+    
     render() {
         const { showLoading } = this.state;
 
@@ -44,8 +45,10 @@ class ListArticle extends Component {
             <View style={GlobalStyle.container}>
                 <FlatList
                     data={this.state.listArticle}
+                    keyExtractor={(item, index) => index}
                     renderItem={({item}) => <Item article={item} />}
                 />
+                <Actions/>
             </View>
         );
     }

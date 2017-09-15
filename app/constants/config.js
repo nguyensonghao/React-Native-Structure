@@ -1,1 +1,1 @@
-export const APP_NAME = "Chăm sóc thú cưng";
+export const APP_NAME = "My Pet";

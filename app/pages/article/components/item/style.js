@@ -1,4 +1,4 @@
-export default ItemStyle = {
+export default Style = {
     item: {
         flex: 1,
         flexDirection: 'row',
@@ -19,9 +19,15 @@ export default ItemStyle = {
         flex: 1
     },
 
+    list: {
+        flexDirection: 'row',
+        alignSelf: 'flex-end',
+        marginBottom: 4  
+    },
+
     title: {
         fontWeight: '400',
-        fontSize: 16,
+        fontSize: 14,
         color: 'black'
     },
 
@@ -41,5 +47,20 @@ export default ItemStyle = {
         marginRight: 6,
         marginTop: -3,
         fontSize: 13
+    },    
+
+    detail: {
+        marginTop: 10,
+        flexDirection: 'row'
+    },
+
+    detailItem: {        
+        fontSize: 10,
+        marginRight: 12
+    },    
+
+    iconButton: {
+        marginLeft: 16,
+        fontSize: 16
     }
 }

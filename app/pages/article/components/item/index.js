@@ -1,34 +1,31 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import AutoHeightImage from 'react-native-auto-height-image';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import { Actions } from 'react-native-router-flux';
+import Icon from 'react-native-vector-icons/Ionicons';
 
-import ItemStyle from './style';
+import Style from './style';
 
 class Item extends Component {
     render() {
         return (
-            <TouchableOpacity style={ItemStyle.item} onPress={() => Actions.detailArticle({id: this.props.id})}>
+            <TouchableOpacity style={Style.item} onPress={() => Actions.detailArticle({id: this.props.id})}>
                 <AutoHeightImage
                     width={120}
                     imageURL={this.props.article.image}
                 />
-                <View style={ItemStyle.desc}>
-                    <Text style={ItemStyle.title}>{this.props.article.title}</Text>
-                    <View style={ItemStyle.social}>
-                        <View style={ItemStyle.socialItem}>
-                            <Text style={ItemStyle.gray}>500</Text>
-                            <Icon name="share" size={13} color="gray"/>
-                        </View>
-                        <View style={ItemStyle.socialItem}>
-                            <Text style={ItemStyle.gray}>500</Text>
-                            <Icon name="thumbs-o-up" size={13} color="gray"/>
-                        </View>
-                        <View style={ItemStyle.socialItem}>
-                            <Text style={ItemStyle.gray}>500</Text>
-                            <Icon name="eye" size={13} color="gray"/>
-                        </View>
+                <View style={Style.desc}>
+                    <View style={Style.list}>
+                        <Icon name="ios-heart-outline" style={Style.iconButton} />
+                        <Icon name="md-more" style={Style.iconButton} />
+                        <Icon name="md-share" style={Style.iconButton} />
+                    </View>
+                    <Text style={Style.title}>{this.props.article.title}</Text>
+                    <View style={Style.detail}>
+                        <Text style={Style.detailItem}>20/10/2017</Text>
+                        <Text style={Style.detailItem}>21Views</Text>
+                        <Text style={Style.detailItem}>21Likes</Text>
+                        <Text style={Style.detailItem}>21Ans</Text>
                     </View>
                 </View>
             </TouchableOpacity >

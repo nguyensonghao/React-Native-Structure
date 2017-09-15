@@ -47,6 +47,10 @@
 		4C1CE7DCB8F643DA9EEFE217 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 602CB6C1D0F2425799121B91 /* Octicons.ttf */; };
 		F38E08039C7143D78537AC2D /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1643A22A17C0490FA8781478 /* SimpleLineIcons.ttf */; };
 		B40140C65A2F4EF3A960951E /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1025F1FB0B8E497F990BE35C /* Zocial.ttf */; };
+		D03B2313F97148378014A4C9 /* vincHand.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47CE8CCA163545B0904BF715 /* vincHand.ttf */; };
+		AB25A75F08C84881BE1B190A /* VNIAnnabelle.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B2B2AEF387B6478195B05997 /* VNIAnnabelle.ttf */; };
+		21F69DC1E0AD463190DB0D27 /* vFree.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 477730F507E140888ACA8CB5 /* vFree.ttf */; };
+		F13CD697476F4A0797C66BC0 /* vMurrayb.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF0329BF03A04FE499BEED58 /* vMurrayb.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -286,6 +290,10 @@
 		602CB6C1D0F2425799121B91 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1643A22A17C0490FA8781478 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1025F1FB0B8E497F990BE35C /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		47CE8CCA163545B0904BF715 /* vincHand.ttf */ = {isa = PBXFileReference; name = "vincHand.ttf"; path = "../assets/fonts/vincHand.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B2B2AEF387B6478195B05997 /* VNIAnnabelle.ttf */ = {isa = PBXFileReference; name = "VNIAnnabelle.ttf"; path = "../assets/fonts/VNIAnnabelle.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		477730F507E140888ACA8CB5 /* vFree.ttf */ = {isa = PBXFileReference; name = "vFree.ttf"; path = "../assets/fonts/vFree.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		AF0329BF03A04FE499BEED58 /* vMurrayb.ttf */ = {isa = PBXFileReference; name = "vMurrayb.ttf"; path = "../assets/fonts/vMurrayb.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -543,6 +551,10 @@
 				602CB6C1D0F2425799121B91 /* Octicons.ttf */,
 				1643A22A17C0490FA8781478 /* SimpleLineIcons.ttf */,
 				1025F1FB0B8E497F990BE35C /* Zocial.ttf */,
+				47CE8CCA163545B0904BF715 /* vincHand.ttf */,
+				B2B2AEF387B6478195B05997 /* VNIAnnabelle.ttf */,
+				477730F507E140888ACA8CB5 /* vFree.ttf */,
+				AF0329BF03A04FE499BEED58 /* vMurrayb.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -927,6 +939,10 @@
 				4C1CE7DCB8F643DA9EEFE217 /* Octicons.ttf in Resources */,
 				F38E08039C7143D78537AC2D /* SimpleLineIcons.ttf in Resources */,
 				B40140C65A2F4EF3A960951E /* Zocial.ttf in Resources */,
+				D03B2313F97148378014A4C9 /* vincHand.ttf in Resources */,
+				AB25A75F08C84881BE1B190A /* VNIAnnabelle.ttf in Resources */,
+				21F69DC1E0AD463190DB0D27 /* vFree.ttf in Resources */,
+				F13CD697476F4A0797C66BC0 /* vMurrayb.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

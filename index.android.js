@@ -31,7 +31,7 @@ export default class SoTayThuCung extends Component {
     return (
       <DrawerLayoutAndroid
         ref="menuLeft"
-        drawerWidth={273}
+        drawerWidth={270}
         drawerPosition={DrawerLayoutAndroid.positions.Left}
         renderNavigationView={() => <Menu/>}>
         <RouterApp menuLeft={menuLeft}/>

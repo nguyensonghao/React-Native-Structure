@@ -7,6 +7,7 @@ import DetailArticle from './pages/article/detail';
 import ListForum from './pages/forum/list';
 import AddForum from './pages/forum/add';
 import Button from './components/button';
+import ButtonRightHome from './components/buttonRightHome';
 import ButtonIcon from './components/buttonIcon';
 import NavbarStyle from './styles/navbar';
 import { APP_NAME } from './constants/config';
@@ -25,13 +26,13 @@ export default class RouterApp extends Component {
                     <Scene key="home" 
                         title={APP_NAME}
                         initial={true}
-                        renderLeftButton={<ButtonIcon icon="bars" size={20} color="black" click={() => this.openMenu()}/>}
-                        renderRightButton={<ButtonIcon icon="bell" size={20} color="black" click={() => alert("Show Menu")}/>}
+                        renderLeftButton={<ButtonIcon icon="ios-menu-outline" size={28} color="#616161" click={() => this.openMenu()}/>}
+                        renderRightButton={<ButtonRightHome/>}
                         component={Home} />
 
                     <Scene key="listArticle" 
                         title="Mẹo chăm sóc thú cưng"
-                        // initial={true}  
+                        //initial={true}  
                         component={ListArticle} />
 
                     <Scene key="detailArticle" 

@@ -13,9 +13,5 @@ export default Style = {
         color: 'black',
         fontSize: 20,
         marginBottom: 20
-    },
-
-    p: {
-        fontSize: 16
     }
 }

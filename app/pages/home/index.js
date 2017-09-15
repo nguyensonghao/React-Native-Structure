@@ -4,6 +4,8 @@ import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
 
 import Style from './style';
+import Slider from './components/slider';
+import Profile from './components/profile';
 import Loading from '../../components/loading';
 
 export default class Home extends Component {
@@ -14,6 +16,7 @@ export default class Home extends Component {
     render() {
         return (
             <View style={Style.container}>
+                <Profile/>
                 <View style={Style.rows}>
                     <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
                         <Image
