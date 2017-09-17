@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList } from 'react-native';
+import { Actions } from 'react-native-router-flux';
+import ActionButton from 'react-native-action-button';
 
 import GlobalStyle from '../../../styles/global';
 import Item from '../components/item';
 import Loading from '../../../components/loading';
-import Actions from '../components/actions';
 
 class ListArticle extends Component {
     constructor(props) {
@@ -48,7 +49,8 @@ class ListArticle extends Component {
                     keyExtractor={(item, index) => index}
                     renderItem={({item}) => <Item article={item} />}
                 />
-                <Actions/>
+                
+                <ActionButton buttonColor="rgba(231,76,60,1)" onPress={() => {Actions.addArticle()}}/>
             </View>
         );
     }

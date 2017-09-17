@@ -18,7 +18,7 @@ export default Style = {
     },
 
     detail: {
-        backgroundColor: '#757575',
+        backgroundColor: '#F5F5F5',
         flex: 1,
         alignItems: 'center',
         padding: 20
@@ -34,5 +34,32 @@ export default Style = {
         fontSize: 14,
         color: 'white',
         marginTop: 6
+    },
+
+    rect: {
+        backgroundColor: '#F5F5F5',
+    },
+
+    rectLeft: {
+        width: 0,
+        height: 0,
+        backgroundColor: 'transparent',
+        borderStyle: 'solid',
+        borderRightWidth: 40,
+        borderTopWidth: 120,
+        borderRightColor: 'transparent',
+        borderTopColor: 'white'
+    },
+
+    indicate: {
+        alignItems: 'center',
+        flex: 1
+    },
+
+    progress: {
+        width: 80,
+        height: 6,
+        backgroundColor: 'black',
+        borderRadius: 3
     }
 }

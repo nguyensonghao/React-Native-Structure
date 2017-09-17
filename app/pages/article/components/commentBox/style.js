@@ -1,13 +1,4 @@
-export default Style = {
-    footer: {
-        backgroundColor: 'white',
-        borderTopWidth: 1,
-        borderTopColor: '#ddd',
-        position: 'absolute',
-        bottom: 0,
-        height: 48,
-    },
-
+export default Style = {    
     commentContainer: {
         flex: 1,
         flexDirection: 'row'
@@ -28,6 +19,40 @@ export default Style = {
 
     input: {
         height: 48,
-        paddingLeft: 10
+        paddingLeft: 20
+    },
+
+    btnPost: {
+        backgroundColor: '#28a745',
+        borderRadius: 3.2,
+        width: 45,
+        height: 31,
+        alignItems: 'center',
+        justifyContent:'center',
+        marginRight: 10
+    },
+
+    btnPostText: {
+        color: 'white'
+    },
+
+    btnCancel: {
+        backgroundColor: '#868e96',
+        borderRadius: 3.2,
+        width: 60,
+        height: 31,
+        alignItems: 'center',
+        justifyContent:'center',
+    },
+
+    btnCancelText: {
+        color: 'white'
+    },
+
+    listButton: {
+        flex: 1,
+        flexDirection: 'row',
+        marginTop: 10
     }
+
 }

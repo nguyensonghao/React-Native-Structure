@@ -19,48 +19,60 @@ export default class Home extends Component {
                 <Profile/>
                 <View style={Style.rows}>
                     <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
-                        <Image
-                            style={Style.imgIcon}
-                            source={require('../../resources/images/dog.png')}
-                        />
-                        <Text style={Style.textIcon}>Bài Đăng</Text>
+                        <View style={Style.boxItemWrapper}>
+                            <Image
+                                style={Style.imgIcon}
+                                source={require('../../resources/images/article.png')}
+                            />
+                            <Text style={Style.textIcon}>Bài Đăng</Text>
+                        </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
-                        <Image
-                            style={Style.imgIcon}
-                            source={require('../../resources/images/cat.png')}
-                        />
-                        <Text style={Style.textIcon}>Bài Đăng</Text>
+                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listForum()}>
+                        <View style={Style.boxItemWrapper}>
+                            <Image
+                                style={Style.imgIcon}
+                                source={require('../../resources/images/forum.png')}
+                            />
+                            <Text style={Style.textIcon}>Trao đổi</Text>
+                        </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
-                        <Image
-                            style={Style.imgIcon}
-                            source={require('../../resources/images/duck.png')}
-                        />
-                        <Text style={Style.textIcon}>Bài Đăn</Text>
+                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.gallery()}>
+                        <View style={Style.boxItemWrapper}>
+                            <Image
+                                style={Style.imgIcon}
+                                source={require('../../resources/images/photo.png')}
+                            />
+                            <Text style={Style.textIcon}>Ảnh đẹp</Text>
+                        </View>
                     </TouchableOpacity>
                 </View>
                 <View style={Style.rows}>
                     <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
-                        <Image
-                            style={Style.imgIcon}
-                            source={require('../../resources/images/chicken.png')}
-                        />
-                        <Text style={Style.textIcon}>Bài Đăng</Text>
+                        <View style={Style.boxItemWrapper}>
+                            <Image
+                                style={Style.imgIcon}
+                                source={require('../../resources/images/note.png')}
+                            />
+                            <Text style={Style.textIcon}>Ghi chú</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.chat()}>
+                        <View style={Style.boxItemWrapper}>
+                            <Image
+                                style={Style.imgIcon}
+                                source={require('../../resources/images/chat.png')}
+                            />
+                            <Text style={Style.textIcon}>Trò chuyện</Text>
+                        </View>
                     </TouchableOpacity>
                     <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
-                        <Image
-                            style={Style.imgIcon}
-                            source={require('../../resources/images/cow.png')}
-                        />
-                        <Text style={Style.textIcon}>Bài Đăng</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
-                        <Image
-                            style={Style.imgIcon}
-                            source={require('../../resources/images/pig.png')}
-                        />
-                        <Text style={Style.textIcon}>Bài Đăng</Text>
+                        <View style={Style.boxItemWrapper}>
+                            <Image
+                                style={Style.imgIcon}
+                                source={require('../../resources/images/settings.png')}
+                            />
+                            <Text style={Style.textIcon}>Cài đặt</Text>
+                        </View>
                     </TouchableOpacity>
                 </View>
             </View>

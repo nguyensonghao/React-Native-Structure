@@ -13,5 +13,10 @@ export default Style = {
         color: 'black',
         fontSize: 20,
         marginBottom: 20
+    },
+
+    li: {
+        fontSize: 16,
+        lineHeight: 20
     }
 }

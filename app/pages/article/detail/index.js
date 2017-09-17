@@ -6,6 +6,7 @@ import AutoHeightImage from 'react-native-auto-height-image';
 import GlobalStyle from '../../../styles/global';
 import Style from './style';
 import CommentBox from '../components/commentBox';
+import ListComment from '../components/listComment';
 import ActionsDetail from '../components/actionDetail';
 
 class DetailArticle extends Component {
@@ -14,7 +15,7 @@ class DetailArticle extends Component {
         this.state = {
             content: "",
             showComment: false,
-            fontSize: 16
+            fontSize: 14
         }
     }
 
@@ -28,6 +29,10 @@ class DetailArticle extends Component {
         this.setState({
             showComment: true
         })
+    }
+
+    sendComment () {
+        alert('test');
     }
 
     zoomOut () {        
@@ -69,11 +74,13 @@ class DetailArticle extends Component {
                         value={this.state.content}
                         stylesheet={StyleHtml}
                     />
+                    <ListComment/>
+                    <CommentBox send={() => this.sendComment()}/>
                 </ScrollView>
-                <ActionsDetail addComment={() => this.addComment()} 
+                <ActionsDetail 
+                    addComment={() => this.addComment()} 
                     zoomIn={() => this.zoomIn()} 
                     zoomOut={() => this.zoomOut()}/>
-                {showComment ? <CommentBox/> : (null)}
             </View>
         );
     }

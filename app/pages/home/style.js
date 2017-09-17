@@ -1,16 +1,24 @@
 export default Style = {
     container: {
-        backgroundColor: '#f5f5f5',
+        backgroundColor: 'white',
         flex: 1
     },
 
     rows: {
         flexDirection: 'row',
-        marginBottom: 12
+        marginTop: 20,
+        alignItems: 'center',
+        justifyContent: 'center'
     },
 
     boxItem: {
         flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
+
+    boxItemWrapper: {
+        justifyContent: 'center',
         alignItems: 'center'
     },
 
@@ -20,7 +28,6 @@ export default Style = {
     },
 
     textIcon: {
-        marginTop: 6,
         color: 'black',
         fontSize: 14
     }
