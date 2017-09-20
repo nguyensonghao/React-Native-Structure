@@ -16,7 +16,6 @@ export default class Home extends Component {
     render() {
         return (
             <View style={Style.container}>
-                <Profile/>
                 <View style={Style.rows}>
                     <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
                         <View style={Style.boxItemWrapper}>
@@ -24,7 +23,7 @@ export default class Home extends Component {
                                 style={Style.imgIcon}
                                 source={require('../../resources/images/article.png')}
                             />
-                            <Text style={Style.textIcon}>Bài Đăng</Text>
+                            <Text style={Style.textIcon}>Mẹo vặt</Text>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listForum()}>
@@ -33,7 +32,7 @@ export default class Home extends Component {
                                 style={Style.imgIcon}
                                 source={require('../../resources/images/forum.png')}
                             />
-                            <Text style={Style.textIcon}>Trao đổi</Text>
+                            <Text style={Style.textIcon}>Diễn đàn</Text>
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity style={Style.boxItem} onPress={() => Actions.gallery()}>
@@ -42,7 +41,7 @@ export default class Home extends Component {
                                 style={Style.imgIcon}
                                 source={require('../../resources/images/photo.png')}
                             />
-                            <Text style={Style.textIcon}>Ảnh đẹp</Text>
+                            <Text style={Style.textIcon}>Khoảnh khắc</Text>
                         </View>
                     </TouchableOpacity>
                 </View>
@@ -50,7 +49,7 @@ export default class Home extends Component {
                     <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
                         <View style={Style.boxItemWrapper}>
                             <Image
-                                style={Style.imgIcon}
+                                style={[Style.imgIcon, {width: 82, height: 60}]}
                                 source={require('../../resources/images/note.png')}
                             />
                             <Text style={Style.textIcon}>Ghi chú</Text>
@@ -69,9 +68,34 @@ export default class Home extends Component {
                         <View style={Style.boxItemWrapper}>
                             <Image
                                 style={Style.imgIcon}
+                                source={require('../../resources/images/smile.png')}
+                            />
+                            <Text style={Style.textIcon}>Hài hước</Text>
+                        </View>
+                    </TouchableOpacity>
+                </View>
+                <View style={Style.rows}>
+                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
+                        <View style={Style.boxItemWrapper}>
+                            <Image
+                                style={Style.imgIcon}
+                                source={require('../../resources/images/more.png')}
+                            />
+                            <Text style={Style.textIcon}>Thêm ứng dụng</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.chat()}>
+                        <View style={Style.boxItemWrapper}>
+                            <Image
+                                style={Style.imgIcon}
                                 source={require('../../resources/images/settings.png')}
                             />
                             <Text style={Style.textIcon}>Cài đặt</Text>
+                        </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
+                        <View style={Style.boxItemWrapper}>
+                            
                         </View>
                     </TouchableOpacity>
                 </View>
