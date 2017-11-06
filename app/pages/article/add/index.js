@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import { AutoGrowingTextInput } from 'react-native-autogrow-textinput';
+import ImagePicker from 'react-native-image-picker';
 
 import Style from './style';
+import { firebaseApp } from '../../../firebaseApp.js';
 
 class AddArticle extends Component {
     constructor(props) {
@@ -13,15 +15,61 @@ class AddArticle extends Component {
             height: 0
         }
     }
+
+    chooseImage () {
+        var options = {
+            title: 'Chọn ảnh',
+            storageOptions: {
+                skipBackup: true,
+                path: 'images'
+            }
+        };
+
+        ImagePicker.showImagePicker(options, (response) => {
+            if (response.didCancel) {
+                console.log('User cancelled image picker');
+            } else if (response.error) {
+                console.log('ImagePicker Error: ', response.error);
+            } else if (response.customButton) {
+                console.log('User tapped custom button: ', response.customButton);
+            } else {
+                alert(response.uri);
+            }
+        });
+    }
+
+    add () {
+        if (this.state.text) {
+            firebaseApp.database().ref('/article').push({
+                time: new Date().getTime(),
+                content: this.state.text
+            }, err => {
+                if (err) {
+
+                } else {
+                    this.setState({
+                        text: ""
+                    })
+                    this.forceUpdate();
+                }
+            })
+        }
+    }
+
+    reset () {
+        this.setState({
+            text: ""
+        })
+    }
     
     render() {
         return (
             <View style={Style.container}>
                 <View style={Style.toolbar}>
-                    <View style={[Style.toolbarItem, Style.toolbarItemFirst]}>
+                    <TouchableOpacity style={[Style.toolbarItem, Style.toolbarItemFirst]} onPress={() => this.chooseImage()}>
                         <Image source={require('../../../resources/images/picture.png')}/>
                         <Text style={Style.toolbarText}>Thêm ảnh</Text>
-                    </View>
+                    </TouchableOpacity>
                     <View style={Style.toolbarItem}>
                         <Image source={require('../../../resources/images/mail.png')}/>
                         <Text style={Style.toolbarText}>Loại bài</Text>
@@ -47,10 +95,10 @@ class AddArticle extends Component {
                     </View>
                 </View>
                 <View style={Style.listButton}>
-                    <TouchableOpacity style={Style.button}>
+                    <TouchableOpacity style={Style.button} onPress={() => this.add()}>
                         <Text style={Style.buttonPost}>Đăng bài</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[Style.button, {backgroundColor: '#868e96'}]}>
+                    <TouchableOpacity style={[Style.button, {backgroundColor: '#868e96'}]} onPress={() => this.reset()}>
                         <Text style={Style.buttonPost}>Xóa</Text>
                     </TouchableOpacity>
                 </View>

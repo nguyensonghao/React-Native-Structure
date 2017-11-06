@@ -1,0 +1,3 @@
+export const CHANGE_LOADING = 'CHANGE_LOADING';
+export const CHANGE_LIST_ARTICLE = 'CHANGE_LIST_ARTICLE';
+export const SET_SQLITE = 'SET_SQLITE';

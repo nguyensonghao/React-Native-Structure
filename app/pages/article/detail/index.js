@@ -31,10 +31,6 @@ class DetailArticle extends Component {
         })
     }
 
-    sendComment () {
-        alert('test');
-    }
-
     zoomOut () {        
         if (this.state.fontSize < 20) {
             this.setState({
@@ -75,7 +71,7 @@ class DetailArticle extends Component {
                         stylesheet={StyleHtml}
                     />
                     <ListComment/>
-                    <CommentBox send={() => this.sendComment()}/>
+                    <CommentBox/>
                 </ScrollView>
                 <ActionsDetail 
                     addComment={() => this.addComment()} 

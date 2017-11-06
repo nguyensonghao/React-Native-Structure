@@ -19,12 +19,13 @@ class CommentBox extends Component {
     }
     
     sendComment () {
-        if (!this.state.sending) {
+        if (!this.state.sending && this.state.comment) {
             this.setState({
                 sending: true
             }, () => {
                 firebaseApp.database().ref('/comment').push({
-                    msg: this.state.comment
+                    msg: this.state.comment,
+                    time: new Date().getTime()
                 }, (err) => {
                     if (err) {
 
@@ -33,8 +34,7 @@ class CommentBox extends Component {
                             comment: "",
                             sending: false
                         })
-
-                        this.props.send();
+                        this.forceUpdate();
                     }
                 })
             })

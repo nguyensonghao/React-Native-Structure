@@ -1,5 +1,6 @@
 import React, { Component, Text, View, TouchableOpacity } from 'react';
 import { Scene, Router, Actions } from 'react-native-router-flux';
+import { connect } from 'react-redux';
 
 import Home from './pages/home';
 import Chat from './pages/chat';
@@ -15,6 +16,8 @@ import ButtonIcon from './components/buttonIcon';
 import NavbarStyle from './styles/navbar';
 import { APP_NAME } from './constants/config';
 
+const RouterWithRedux = connect()(Router);
+
 export default class RouterApp extends Component {
     openMenu () {
         this.props.menuLeft.openDrawer();
@@ -22,7 +25,7 @@ export default class RouterApp extends Component {
 
     render () {
         return (
-            <Router>
+            <RouterWithRedux>
                 <Scene key="root" 
                     navigationBarStyle={NavbarStyle.container}
                     titleStyle={NavbarStyle.title}
@@ -68,7 +71,7 @@ export default class RouterApp extends Component {
                         title="Ảnh đẹp" 
                         component={Gallery} />
                 </Scene>
-            </Router>
+            </RouterWithRedux>
         )
     }
 }

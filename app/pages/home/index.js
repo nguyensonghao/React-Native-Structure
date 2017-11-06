@@ -2,15 +2,26 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
+import { connect } from 'react-redux';
+import SQLite from 'react-native-sqlite-storage';
 
 import Style from './style';
 import Slider from './components/slider';
 import Profile from './components/profile';
 import Loading from '../../components/loading';
+import * as actions from '../../actions';
 
-export default class Home extends Component {
+class Home extends Component {
     constructor(props) {
-        super(props);        
+        super(props);
+    }
+
+    componentDidMount() {
+        this.props.dispatch(actions.setSqlite(SQLite.openDatabase({name : "data.sqlite", createFromLocation : 1}, () => {
+            console.log('Open database success')
+        }, () => {
+            console.log('Open database');
+        })));
     }
     
     render() {
@@ -103,3 +114,11 @@ export default class Home extends Component {
         );
     }
 }
+
+function mapStateToProps (state) {
+    return {
+        isLoading: state.isLoading
+    }
+}
+
+export default connect(mapStateToProps)(Home);
