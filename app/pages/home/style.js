@@ -29,6 +29,11 @@ export default Style = {
 
     textIcon: {
         color: 'black',
-        fontSize: 14
+        fontSize: 13,
+        padding: 4,
+        borderRadius: 12,
+        width: 110,
+        textAlign: 'center',
+        justifyContent: 'center'
     }
 }

@@ -9,14 +9,14 @@ import Style from './style';
 class Item extends Component {
     render() {
         return (
-            <TouchableOpacity style={Style.item} onPress={() => Actions.detailArticle({id: this.props.id})}>
+            <TouchableOpacity style={Style.item} onPress={() => Actions.detailArticle({id: this.props.article.id, img: this.props.article.img})}>
                 <AutoHeightImage
                     width={120}
-                    imageURL={this.props.article.image}
+                    imageURL={this.props.article.img}
                 />
                 <View style={Style.desc}>
                     <View style={Style.list}>
-                        <Icon name="ios-heart-outline" style={Style.iconButton} />
+                        <Icon name="ios-heart" style={Style.iconButton} />
                         <Icon name="md-more" style={Style.iconButton} />
                         <Icon name="md-share" style={Style.iconButton} />
                     </View>

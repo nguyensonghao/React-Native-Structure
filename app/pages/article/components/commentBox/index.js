@@ -24,6 +24,7 @@ class CommentBox extends Component {
                 sending: true
             }, () => {
                 firebaseApp.database().ref('/comment').push({
+                    article_id: this.props.article.id,
                     msg: this.state.comment,
                     time: new Date().getTime()
                 }, (err) => {

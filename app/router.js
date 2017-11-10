@@ -29,11 +29,11 @@ export default class RouterApp extends Component {
                 <Scene key="root" 
                     navigationBarStyle={NavbarStyle.container}
                     titleStyle={NavbarStyle.title}
-                    renderRightButton={<ButtonIcon icon="ios-notifications-outline" size={28} color="#616161" click={() => alert("Show Menu")}/>}>
+                    renderRightButton={<ButtonIcon icon="ios-notifications" size={28} color="black" click={() => alert("Show Menu")}/>}>
                     <Scene key="home" 
                         title={APP_NAME}
                         initial={true}
-                        renderLeftButton={<ButtonIcon icon="ios-menu-outline" size={28} color="#616161" click={() => this.openMenu()}/>}
+                        renderLeftButton={<ButtonIcon icon="md-menu" size={28} color="black" click={() => this.openMenu()}/>}
                         renderRightButton={<ButtonRightHome/>}
                         component={Home} />
 

@@ -1,11 +1,11 @@
 export default NavbarStyle = {
     container: {
-        backgroundColor: '#F5F5F5'
+        backgroundColor: 'white'
     },
 
     title: {
         color: 'black',
-        fontWeight: '400',
+        fontWeight: '500',
         // fontSize: 32,
         // fontFamily: 'vincHand',
     }

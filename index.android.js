@@ -11,42 +11,42 @@ import reducer from './app/reducers';
 const store = createStore(reducer);
 
 export default class SoTayThuCung extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      menuLeft: null,
-      isLoading: false
+    constructor(props) {
+        super(props);
+        this.state = {
+            menuLeft: null,
+            isLoading: false
+        }
     }
-  }
   
-  componentDidMount() {
-    this.setState({
-      menuLeft: this.refs.menuLeft
-    })  
+    componentDidMount() {
+        this.setState({
+          menuLeft: this.refs.menuLeft
+        })  
 
     // store.subscribe(() => {
     //   this.setState({
     //     isLoading: store.getState().isLoading
     //   })
     // })
-  }
+    }
 
-  render() {
-    const { menuLeft, isLoading } = this.state;
+    render() {
+        const { menuLeft, isLoading } = this.state;
 
-    return (
-      <DrawerLayoutAndroid
-        ref="menuLeft"
-        drawerWidth={270}
-        drawerPosition={DrawerLayoutAndroid.positions.Left}
-        renderNavigationView={() => <Menu/>}>
-        <Spinner visible={isLoading} />
-        <Provider store={store}>
-          <RouterApp menuLeft={menuLeft} />
-        </Provider>
-      </DrawerLayoutAndroid>
-    )
-  }
+        return (
+            <DrawerLayoutAndroid
+                ref="menuLeft"
+                drawerWidth={270}
+                drawerPosition={DrawerLayoutAndroid.positions.Left}
+                renderNavigationView={() => <Menu/>}>
+                <Spinner visible={isLoading} />
+                <Provider store={store}>
+                  <RouterApp menuLeft={menuLeft} />
+                </Provider>
+            </DrawerLayoutAndroid>
+        )
+    }
 }
 
 AppRegistry.registerComponent('SoTayThuCung', () => SoTayThuCung);
