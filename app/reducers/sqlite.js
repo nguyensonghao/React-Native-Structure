@@ -1,8 +1,9 @@
 import { ActionConst } from 'react-native-router-flux';
+import SQLite from 'react-native-sqlite-storage';
 
 import { SET_SQLITE } from '../constants/actionTypes.js';
 const initialState = {
-    db: null
+    db: SQLite.openDatabase({name : "data.sqlite", createFromLocation : 1})
 };
 
 export default function sqlite (state = initialState, action = {}) {

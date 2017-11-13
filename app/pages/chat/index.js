@@ -4,6 +4,7 @@ import { GiftedChat } from 'react-native-gifted-chat';
 
 import Style from'./style';
 import { firebaseApp } from '../../firebaseApp';
+import ButtonSend from './components/buttonSend';
 
 class Chat extends Component {
     constructor(props) {
@@ -54,7 +55,8 @@ class Chat extends Component {
             <GiftedChat
                 messages={this.state.messages}
                 onSend={(messages) => this.onSend(messages)}
-                placeholder="Gủi tin nhắn"
+                placeholder="Gửi tin nhắn"
+                // renderSend={() => <ButtonSend/>}
                 user={{
                     _id: 3,
                     name: 'Nguyen Song Hao',
