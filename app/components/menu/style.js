@@ -1,6 +1,6 @@
 export default Style = {
     header: {
-        backgroundColor: '#00796B',
+        backgroundColor: 'black',
         height: 80        
     },
 
@@ -26,7 +26,15 @@ export default Style = {
     },
 
     menuText: {
-        fontSize: 12,
+        fontSize: 14,
         marginLeft: 16,
+        color: 'black'
+    },
+
+    textLogo: {
+        color: 'white',
+        fontSize: 16,
+        marginTop: 24,
+        marginLeft: 10
     }
 }

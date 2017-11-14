@@ -15,14 +15,6 @@ class Home extends Component {
     constructor(props) {
         super(props);
     }
-
-    componentDidMount() {
-        this.props.dispatch(actions.setSqlite(SQLite.openDatabase({name : "data.sqlite", createFromLocation : 1}, () => {
-            console.log('Open database success');
-        }, () => {
-            console.log('Open database');
-        })));
-    }
     
     render() {
         return (
