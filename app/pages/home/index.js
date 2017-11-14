@@ -87,7 +87,7 @@ class Home extends Component {
                             <Text style={Style.textIcon}>Thêm ứng dụng</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.chat()}>
+                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.settings()}>
                         <View style={Style.boxItemWrapper}>
                             <Image
                                 style={[Style.imgIcon, {height: 80, marginTop: -10}]}

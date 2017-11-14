@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
-import Search from 'react-native-search-box';
 import axios from 'axios';
 
 import Style from './style';
 import Item from './components/item';
-import SearchProvider from '../../providers/search';
+import SearchService from '../../services/search';
+import SearchBox from './components/searchBox';
 
 class Gallery extends Component {
     constructor(props) {
@@ -13,22 +13,20 @@ class Gallery extends Component {
         
         this.state = {
             images: [],
-            searchProvider: new SearchProvider()
+            searchService: new SearchService()
         };
     }
 
-    search() {
-        return new Promise((resolve, reject) => {
-            resolve();
-        });
+    componentDidMount() {
+        // this.state.searchService.search('house', 1, 10).then(data => {
+        //     this.setState({
+        //         images: data
+        //     })
+        // })
     }
 
-    componentDidMount() {
-        this.state.searchProvider.search('house', 1, 10).then(data => {
-            this.setState({
-                images: data
-            })
-        })
+    search(text) {
+        alert(text);
     }
 
     render() {
@@ -36,13 +34,7 @@ class Gallery extends Component {
 
         return (
             <View style={Style.container}>
-                <Search
-                    ref="search_box"
-                    onSearch={() => this.search()}
-                    backgroundColor="black"
-                    placeholder="Tìm kiếm"
-                    cancelTitle="Hủy"
-                />
+                <SearchBox search={(text) => this.search(text)}/>
                 
                 <FlatList
                     data={images}

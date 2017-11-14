@@ -7,6 +7,7 @@ import GlobalStyle from '../../../styles/global';
 import Item from '../components/item';
 import Loading from '../../../components/loading';
 import * as actions from '../../../actions';
+import Style from './style';
 
 class ListJoke extends Component {
     constructor(props) {
@@ -33,7 +34,7 @@ class ListJoke extends Component {
         const { list } = this.props;
 
         return (
-            <View style={GlobalStyle.container}>
+            <View style={[GlobalStyle.container, Style.container]}>
                 <FlatList
                     data={list}
                     keyExtractor={(item, index) => index}

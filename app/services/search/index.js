@@ -1,12 +1,17 @@
 import axios from 'axios';
 
-export default class SearchProvider {
-	static search (query, page, total) {
-		let url = "https://pixabay.com/api?key=7029048-d6bfc0eb97da5a2d531f1118e&q=" + query + "&page=" + page + "&per_page=" + total;
+import { API_KEY_SEARCH } from '../../constants/config.js';
+import UtilService from '../util';
+
+export default class SearchService {
+	search (query, page, total) {
+		let url = "https://pixabay.com/api?key=" + API_KEY_SEARCH + "&q=" + query + "&page=" + page + "&per_page=" + total;
 		return new Promise((resolve, reject) => {
 			axios.get(url).then(response => {
-				let images = this.convertImage(response.data.hits)
-	            resolve(images);
+				images = response.data.hits.filter(image => {
+					return image.userImageURL;
+				})
+	            resolve(this.convertImage(images));
 	        })
 	        .catch(function (error) {
 	            alert(error);

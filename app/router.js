@@ -13,6 +13,7 @@ import ListForum from './pages/forum/list';
 import AddForum from './pages/forum/add';
 import ListJoke from './pages/joke/list';
 import DetailJoke from './pages/joke/detail';
+import Settings from './pages/settings';
 
 import Button from './components/button';
 import ButtonRightHome from './components/buttonRightHome';
@@ -71,12 +72,12 @@ export default class RouterApp extends Component {
                         component={Chat} />
                     
                     <Scene key="gallery"
-                        initial={true} 
+                        // initial={true} 
                         title="Khoảnh khắc" 
                         component={Gallery} />
 
                     <Scene key="listJoke"
-                        // initial={true} 
+                        initial={true} 
                         title="Hài hước" 
                         component={ListJoke} />
 
@@ -84,6 +85,11 @@ export default class RouterApp extends Component {
                         // initial={true} 
                         title="Hài hước" 
                         component={DetailJoke} />
+
+                    <Scene key="settings"
+                        // initial={true} 
+                        title="Cài đặt" 
+                        component={Settings} />
                 </Scene>
             </RouterWithRedux>
         )
