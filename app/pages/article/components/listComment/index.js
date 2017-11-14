@@ -3,7 +3,7 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 import moment from 'moment';
 
 import Style from './style';
-import { firebaseApp } from '../../../../firebaseApp.js';
+import FirebaseService from '../../../../services/firebaseService.js';
 
 class ListComment extends Component {
     constructor(props) {
@@ -15,15 +15,9 @@ class ListComment extends Component {
     }
 
     componentDidMount() {
-        firebaseApp.database().ref('/comment').on('value', (data) => {
-            let val = data.val();
-            let listComment = [];
-            for (var key in val) {
-                listComment.push(val[key]);
-            }
-
+        FirebaseService.findByField('comment', 'article_id', this.props.id).then(data => {
             this.setState({
-                listComment: listComment
+                listComment: data
             })
         })
     }

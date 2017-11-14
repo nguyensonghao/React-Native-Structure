@@ -1,4 +1,4 @@
-import { CHANGE_LOADING, CHANGE_LIST_ARTICLE, SET_SQLITE } from '../constants/actionTypes.js';
+import { CHANGE_LOADING, CHANGE_LIST_ARTICLE, SET_SQLITE, CHANGE_LIST_JOKE } from '../constants/actionTypes.js';
 
 export function changeLoading (status) {
     return {
@@ -10,6 +10,13 @@ export function changeLoading (status) {
 export function changeListArticle (list) {
 	return {
 		type: CHANGE_LIST_ARTICLE,
+		list
+	}
+}
+
+export function changeListJoke (list) {
+	return {
+		type: CHANGE_LIST_JOKE,
 		list
 	}
 }

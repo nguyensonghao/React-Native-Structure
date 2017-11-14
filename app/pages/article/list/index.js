@@ -26,6 +26,8 @@ class ListArticle extends Component {
                 }
 
                 this.props.dispatch(actions.changeListArticle(list));
+            }, (err) => {
+                alert(JSON.stringify(err));
             });
         });
     }

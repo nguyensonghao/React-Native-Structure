@@ -55,7 +55,7 @@ class DetailArticle extends Component {
     
     render() {
         const { showComment, fontSize, article } = this.state;
-        const { img } = this.props;
+        const { img, id } = this.props;
         const  { height, width } = Dimensions.get('window');
         const fontText = {
             p: {
@@ -77,8 +77,8 @@ class DetailArticle extends Component {
                         value={article.content}
                         stylesheet={StyleHtml}
                     />
-                    <ListComment article={article}/>
-                    <CommentBox/>
+                    <ListComment id={id}/>
+                    <CommentBox id={id}/>
                 </ScrollView>
                 <ActionsDetail 
                     addComment={() => this.addComment()} 

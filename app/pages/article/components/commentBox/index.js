@@ -4,7 +4,7 @@ import { Hideo } from 'react-native-textinput-effects';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import Style from './style';
-import { firebaseApp } from '../../../../firebaseApp';
+import FirebaseService from '../../../../services/firebaseService.js';
 
 class CommentBox extends Component {
     constructor(props) {
@@ -23,20 +23,17 @@ class CommentBox extends Component {
             this.setState({
                 sending: true
             }, () => {
-                firebaseApp.database().ref('/comment').push({
-                    article_id: this.props.article.id,
+                FirebaseService.insert('comment', {
+                    article_id: this.props.id,
                     msg: this.state.comment,
                     time: new Date().getTime()
-                }, (err) => {
-                    if (err) {
-
-                    } else {
-                        this.setState({
-                            comment: "",
-                            sending: false
-                        })
-                        this.forceUpdate();
-                    }
+                }).then(result => {
+                    this.setState({
+                        comment: "",
+                        sending: false
+                    })
+                    
+                    this.forceUpdate();
                 })
             })
         }        
@@ -49,7 +46,7 @@ class CommentBox extends Component {
     }
 
     render() {
-        const {height, width} = Dimensions.get('window');
+        const { height, width } = Dimensions.get('window');
         const { comment } = this.state;
 
         return (

@@ -23,8 +23,8 @@ export default Style = {
     },
 
     imgIcon: {
-        width: 60,
-        height: 60
+        width: 120,
+        height: 64
     },
 
     textIcon: {
@@ -32,7 +32,6 @@ export default Style = {
         fontSize: 13,
         padding: 4,
         borderRadius: 12,
-        width: 110,
         textAlign: 'center',
         justifyContent: 'center'
     }

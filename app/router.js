@@ -2,6 +2,7 @@ import React, { Component, Text, View, TouchableOpacity } from 'react';
 import { Scene, Router, Actions } from 'react-native-router-flux';
 import { connect } from 'react-redux';
 
+// Import list page
 import Home from './pages/home';
 import Chat from './pages/chat';
 import Gallery from './pages/gallery';
@@ -10,6 +11,9 @@ import DetailArticle from './pages/article/detail';
 import AddArticle from './pages/article/add';
 import ListForum from './pages/forum/list';
 import AddForum from './pages/forum/add';
+import ListJoke from './pages/joke/list';
+import DetailJoke from './pages/joke/detail';
+
 import Button from './components/button';
 import ButtonRightHome from './components/buttonRightHome';
 import ButtonIcon from './components/buttonIcon';
@@ -70,6 +74,16 @@ export default class RouterApp extends Component {
                         //initial={true} 
                         title="Ảnh đẹp" 
                         component={Gallery} />
+
+                    <Scene key="listJoke"
+                        // initial={true} 
+                        title="Hài hước" 
+                        component={ListJoke} />
+
+                    <Scene key="detailJoke"
+                        // initial={true} 
+                        title="Hài hước" 
+                        component={DetailJoke} />
                 </Scene>
             </RouterWithRedux>
         )

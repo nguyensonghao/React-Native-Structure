@@ -18,7 +18,7 @@ class Home extends Component {
 
     componentDidMount() {
         this.props.dispatch(actions.setSqlite(SQLite.openDatabase({name : "data.sqlite", createFromLocation : 1}, () => {
-            console.log('Open database success')
+            console.log('Open database success');
         }, () => {
             console.log('Open database');
         })));
@@ -32,7 +32,7 @@ class Home extends Component {
                         <View style={Style.boxItemWrapper}>
                             <Image
                                 style={Style.imgIcon}
-                                source={require('../../resources/images/article.png')}
+                                source={require('../../resources/images/home/1.png')}
                             />
                             <Text style={Style.textIcon}>Mẹo vặt</Text>
                         </View>
@@ -41,7 +41,7 @@ class Home extends Component {
                         <View style={Style.boxItemWrapper}>
                             <Image
                                 style={Style.imgIcon}
-                                source={require('../../resources/images/forum.png')}
+                                source={require('../../resources/images/home/12.png')}
                             />
                             <Text style={Style.textIcon}>Diễn đàn</Text>
                         </View>
@@ -50,7 +50,7 @@ class Home extends Component {
                         <View style={Style.boxItemWrapper}>
                             <Image
                                 style={Style.imgIcon}
-                                source={require('../../resources/images/photo.png')}
+                                source={require('../../resources/images/home/2.png')}
                             />
                             <Text style={Style.textIcon}>Khoảnh khắc</Text>
                         </View>
@@ -60,8 +60,8 @@ class Home extends Component {
                     <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
                         <View style={Style.boxItemWrapper}>
                             <Image
-                                style={[Style.imgIcon, {width: 82, height: 60}]}
-                                source={require('../../resources/images/note.png')}
+                                style={Style.imgIcon}
+                                source={require('../../resources/images/home/9.png')}
                             />
                             <Text style={Style.textIcon}>Ghi chú</Text>
                         </View>
@@ -70,16 +70,16 @@ class Home extends Component {
                         <View style={Style.boxItemWrapper}>
                             <Image
                                 style={Style.imgIcon}
-                                source={require('../../resources/images/chat.png')}
+                                source={require('../../resources/images/home/4.png')}
                             />
                             <Text style={Style.textIcon}>Trò chuyện</Text>
                         </View>
                     </TouchableOpacity>
-                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
+                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listJoke()}>
                         <View style={Style.boxItemWrapper}>
                             <Image
                                 style={Style.imgIcon}
-                                source={require('../../resources/images/smile.png')}
+                                source={require('../../resources/images/home/10.png')}
                             />
                             <Text style={Style.textIcon}>Hài hước</Text>
                         </View>
@@ -90,7 +90,7 @@ class Home extends Component {
                         <View style={Style.boxItemWrapper}>
                             <Image
                                 style={Style.imgIcon}
-                                source={require('../../resources/images/more.png')}
+                                source={require('../../resources/images/home/7.png')}
                             />
                             <Text style={Style.textIcon}>Thêm ứng dụng</Text>
                         </View>
@@ -98,8 +98,8 @@ class Home extends Component {
                     <TouchableOpacity style={Style.boxItem} onPress={() => Actions.chat()}>
                         <View style={Style.boxItemWrapper}>
                             <Image
-                                style={Style.imgIcon}
-                                source={require('../../resources/images/settings.png')}
+                                style={[Style.imgIcon, {height: 80, marginTop: -10}]}
+                                source={require('../../resources/images/home/8.png')}
                             />
                             <Text style={Style.textIcon}>Cài đặt</Text>
                         </View>
