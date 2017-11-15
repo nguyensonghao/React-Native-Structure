@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, FlatList } from 'react-native';
 import ActionButton from 'react-native-action-button';
+import { RichTextEditor, RichTextToolbar } from 'react-native-zss-rich-text-editor';
 
 import GlobalStyle from '../../../styles/global';
 import Item from '../components/item';
+import ActionToolbar from '../components/actionToolbar';
 
 class ListForum extends Component {
     constructor(props) {
@@ -41,10 +43,7 @@ class ListForum extends Component {
                     keyExtractor={(item, index) => index}
                     renderItem={({item}) => <Item forum={item} />}
                 />
-                <ActionButton
-                    buttonColor="rgba(231,76,60,1)"
-                    onPress={() => { console.log("hi")}}
-                />
+                <ActionToolbar/>
             </View>
         );
     }

@@ -18,15 +18,19 @@ class Gallery extends Component {
     }
 
     componentDidMount() {
-        // this.state.searchService.search('house', 1, 10).then(data => {
-        //     this.setState({
-        //         images: data
-        //     })
-        // })
+        this.state.searchService.search('house', 1, 10).then(data => {
+            this.setState({
+                images: data
+            })
+        })
     }
 
     search(text) {
-        alert(text);
+        this.state.searchService.search(text, 1, 10).then(data => {
+            this.setState({
+                images: data
+            })
+        })
     }
 
     render() {

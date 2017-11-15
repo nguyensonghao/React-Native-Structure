@@ -59,7 +59,7 @@ export default class RouterApp extends Component {
 
                     <Scene key="listForum" 
                         title="Góc trao đổi" 
-                        // initial={true} 
+                        initial={true} 
                         component={ListForum} />
 
                     <Scene key="addForum" 
@@ -77,7 +77,7 @@ export default class RouterApp extends Component {
                         component={Gallery} />
 
                     <Scene key="listJoke"
-                        initial={true} 
+                        // initial={true} 
                         title="Hài hước" 
                         component={ListJoke} />
 

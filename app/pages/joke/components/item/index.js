@@ -3,8 +3,6 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import AutoHeightImage from 'react-native-auto-height-image';
 import { Actions } from 'react-native-router-flux';
 import Icon from 'react-native-vector-icons/Ionicons';
-import FBSDK from 'react-native-fbsdk';
-const { ShareDialog } = FBSDK;
 
 import Style from './style';
 
