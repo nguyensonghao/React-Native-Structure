@@ -1,4 +1,4 @@
-import { CHANGE_LOADING, CHANGE_LIST_ARTICLE, SET_SQLITE, CHANGE_LIST_JOKE } from '../constants/actionTypes.js';
+import { CHANGE_LOADING, CHANGE_LIST_ARTICLE, SET_SQLITE, CHANGE_LIST_JOKE, CHANGE_LIST_CATE } from '../constants/actionTypes.js';
 
 export function changeLoading (status) {
     return {
@@ -25,5 +25,12 @@ export function setSqlite (sqlite) {
 	return {
 		type: SET_SQLITE,
 		sqlite
+	}
+}
+
+export function changeListCate (list) {
+	return {
+		type: CHANGE_LIST_CATE,
+		list
 	}
 }

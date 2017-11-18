@@ -14,6 +14,8 @@ import AddForum from './pages/forum/add';
 import ListJoke from './pages/joke/list';
 import DetailJoke from './pages/joke/detail';
 import Settings from './pages/settings';
+import Note from './pages/note/cate';
+import ListNote from './pages/note/list';
 
 import Button from './components/button';
 import ButtonRightHome from './components/buttonRightHome';
@@ -91,6 +93,16 @@ export default class RouterApp extends Component {
                         // initial={true} 
                         title="Cài đặt" 
                         component={Settings} />
+
+                    <Scene key="note"
+                        initial={true} 
+                        title="Danh mục ghi chú" 
+                        component={Note} />
+
+                    <Scene key="listNote"
+                        // initial={true} 
+                        title="Ghi chú" 
+                        component={ListNote} />
                 </Scene>
             </RouterWithRedux>
         )
