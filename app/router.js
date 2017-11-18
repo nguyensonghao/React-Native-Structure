@@ -37,7 +37,7 @@ export default class RouterApp extends Component {
                     renderRightButton={<ButtonIcon icon="ios-notifications" size={28} color="black" click={() => alert("Show Menu")}/>}>
                     <Scene key="home" 
                         title={APP_NAME}
-                        // initial={true}
+                        initial={true}
                         renderLeftButton={<ButtonIcon icon="md-menu" size={28} color="black" click={() => this.openMenu()}/>}
                         renderRightButton={<ButtonRightHome/>}
                         component={Home} />
@@ -63,7 +63,7 @@ export default class RouterApp extends Component {
                         component={ListForum} />
 
                     <Scene key="addForum" 
-                        initial={true} 
+                        // initial={true} 
                         title="Chia sẻ" 
                         component={AddForum} />
 
