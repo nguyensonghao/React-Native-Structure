@@ -43,4 +43,19 @@ export default class SqliteService {
 	        });
 		})
 	}
+
+	static findListByField (db, table, key, value) {
+		return new Promise((resolve, reject) => {
+			db.transaction((tx) => {
+				let query = 'SELECT * FROM ' + table + ' WHERE ' + key + ' = ' + value;
+		        tx.executeSql(query, [], (tx, results) => {
+		        	let result = [];
+	            	for (let i = 0; i < results.rows.length; i++) {
+            			result.push(results.rows.item(i))
+            		}
+            		resolve(result);
+		        });
+	    	});
+		})
+	}
 }

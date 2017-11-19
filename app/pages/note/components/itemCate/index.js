@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, Image, TouchableOpacity, View } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
+import { Actions } from 'react-native-router-flux';
 
 import Style from './style';
 
@@ -8,7 +9,7 @@ export default class ItemCate extends Component {
 	render () {
 		const { cate } = this.props;
 		return (
-			<TouchableOpacity style={Style.item}>
+			<TouchableOpacity style={Style.item} onPress={() => Actions.listNote({cate: cate})}>
 				<Image
 	                style={Style.imgIcon}
 	                source={require('../../../../resources/images/note/folder.png')}

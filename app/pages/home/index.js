@@ -1,4 +1,3 @@
-
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Image } from 'react-native';
 import { Actions } from 'react-native-router-flux';
@@ -49,7 +48,7 @@ class Home extends Component {
                     </TouchableOpacity>
                 </View>
                 <View style={Style.rows}>
-                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.listArticle()}>
+                    <TouchableOpacity style={Style.boxItem} onPress={() => Actions.note()}>
                         <View style={Style.boxItemWrapper}>
                             <Image
                                 style={Style.imgIcon}

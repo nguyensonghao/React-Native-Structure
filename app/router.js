@@ -16,6 +16,7 @@ import DetailJoke from './pages/joke/detail';
 import Settings from './pages/settings';
 import Note from './pages/note/cate';
 import ListNote from './pages/note/list';
+import AddNote from './pages/note/note/add';
 
 import Button from './components/button';
 import ButtonRightHome from './components/buttonRightHome';
@@ -39,7 +40,7 @@ export default class RouterApp extends Component {
                     renderRightButton={<ButtonIcon icon="ios-notifications" size={28} color="black" click={() => alert("Show Menu")}/>}>
                     <Scene key="home" 
                         title={APP_NAME}
-                        initial={true}
+                        // initial={true}
                         renderLeftButton={<ButtonIcon icon="md-menu" size={28} color="black" click={() => this.openMenu()}/>}
                         renderRightButton={<ButtonRightHome/>}
                         component={Home} />
@@ -61,7 +62,7 @@ export default class RouterApp extends Component {
 
                     <Scene key="listForum" 
                         title="Góc trao đổi" 
-                        // initial={true} 
+                        initial={true} 
                         component={ListForum} />
 
                     <Scene key="addForum" 
@@ -95,7 +96,7 @@ export default class RouterApp extends Component {
                         component={Settings} />
 
                     <Scene key="note"
-                        initial={true} 
+                        // initial={true}
                         title="Danh mục ghi chú" 
                         component={Note} />
 
@@ -103,6 +104,11 @@ export default class RouterApp extends Component {
                         // initial={true} 
                         title="Ghi chú" 
                         component={ListNote} />
+
+                    <Scene key="addNote"
+                        // initial={true} 
+                        title="Thêm ghi chú" 
+                        component={AddNote} />
                 </Scene>
             </RouterWithRedux>
         )

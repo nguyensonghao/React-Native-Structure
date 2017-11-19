@@ -44,7 +44,7 @@ class Note extends Component {
 
     addCate (value) {
         this.noteService.insertCate(this.props.db, value).then(data => {
-            UtilService.alert('Thông báo', 'Thêm danh mục thành công!');
+            UtilService.toast('Thêm danh mục thành công!');
             this.getList();
         })
     }

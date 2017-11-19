@@ -3,9 +3,13 @@ import { View, Text, StyleSheet, Image } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
 import Style from './style';
+import UtilService from '../../../../services/util';
 
 class Item extends Component {
     render() {
+        const { forum } = this.props;
+        const time = UtilService.convertNiceDate(new Date(forum.time));
+
         return (
             <View style={Style.container}>
                 <View style={Style.toolbar}>
@@ -15,15 +19,14 @@ class Item extends Component {
                 <View style={Style.info}>
                     <Image style={Style.avatar} source={{uri: 'https://facebook.github.io/react/img/logo_og.png'}}/>
                     <View>
-                        <Text style={Style.name}>Nguyen Song Hao</Text>
-                        <Text style={Style.time}>10h ago</Text>
+                        <Text style={Style.name}>{forum.user.name}</Text>
+                        <Text style={Style.time}>{time}</Text>
                     </View> 
                 </View>
-                <Text style={Style.content}>Cộng hòa xã hội chủ nghĩa Việt Nam Cộng hòa xã hội chủ nghĩa Việt Nam Cộng hòa xã hội chủ nghĩa Việt Nam Cộng hòa xã hội chủ nghĩa Việt Nam Cộng hòa xã hội chủ nghĩa Việt Nam</Text>
+                <Text style={Style.content}>{forum.title}</Text>
                 <View style={Style.moreInfo}>
-                    <Text style={Style.moreInfoItem}>10 trả lời</Text>
-                    <Text style={Style.moreInfoItem}>16 likes</Text>
-                    <Text style={Style.moreInfoItem}>10 trả lời</Text>
+                    <Text style={Style.moreInfoItem}>{forum.comment} trả lời</Text>
+                    <Text style={Style.moreInfoItem}>{forum.like} thích</Text>
                 </View>
             </View>
         );

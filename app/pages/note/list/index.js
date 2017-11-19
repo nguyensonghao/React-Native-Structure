@@ -9,6 +9,7 @@ import ActionButton from 'react-native-action-button';
 import Style from './style';
 import ItemNote from '../components/itemNote';
 import ActionDetail from '../components/actionDetail';
+import SqliteService from '../../../services/sqlite';
 
 class ListNote extends Component {
     constructor(props) {
@@ -18,39 +19,20 @@ class ListNote extends Component {
         }
     }
 
+    componentWillMount() {
+        Actions.refresh({title: this.props.cate.title});
+    }
+
     componentDidMount() {
-        this.setState({
-            list: [
-                {
-                    title: 'Danh sách công việc',
-                    content: 'Lau nhà, nấu cơm, quét dọn'
-                },
-                {
-                    title: 'Danh sách công việc',
-                    content: 'Lau nhà, nấu cơm, quét dọn'
-                },
-                {
-                    title: 'Danh sách công việc',
-                    content: 'Lau nhà, nấu cơm, quét dọn'
-                },
-                {
-                    title: 'Danh sách công việc',
-                    content: 'Lau nhà, nấu cơm, quét dọn'
-                },
-                {
-                    title: 'Danh sách công việc',
-                    content: 'Lau nhà, nấu cơm, quét dọn'
-                },
-                {
-                    title: 'Danh sách công việc',
-                    content: 'Lau nhà, nấu cơm, quét dọn'
-                }
-            ]
+        SqliteService.findListByField(this.props.db, 'note', 'cate_id', this.props.cate.id).then(list => {
+            this.setState({list});
         })
     }
     
     render() {
         const { list } = this.state;
+        const { cate } = this.props;
+
         return (
             <View style={Style.container}>
                 <FlatList
@@ -58,7 +40,7 @@ class ListNote extends Component {
                     keyExtractor={(item, index) => index}
                     renderItem={({item}) => <ItemNote note={item} />}
                 />
-                <ActionButton buttonColor="rgba(231,76,60,1)"/>
+                <ActionButton buttonColor="rgba(231,76,60,1)" onPress={() => Actions.addNote({cate: cate})}/>
             </View>
         );
     }
@@ -66,7 +48,8 @@ class ListNote extends Component {
 
 function mapStateToProps (state) {
     return {
-        isLoading: state.isLoading
+        isLoading: state.isLoading,
+        db: state.sqlite.db
     }
 }
 
